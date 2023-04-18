@@ -54,9 +54,10 @@ function init() {
             if (answers.action == 'Add Department') {
                 addDepartment();
             }
-            if (answers.action == 'Update Role') {
+            if (answers.action == 'Update Employee Role') {
                 updateEmployeeRole();
             }
+           
         })
 }
 
@@ -188,27 +189,38 @@ function addDepartment() {
 }
 
 function updateEmployeeRole() {
-    inquirer.prompt([
-     
-        {
-            type: "input",
-            message: "what is the New Role ?",
-            name: "update_role",
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "what is the Employee id ?",
+                name: "emp_id",
+    
+            },
+            {
+                type: "input",
+                message: "what is the new role ?",
+                name: "new_role",
+    
+            },
+            // {
+            //     type: "input",
+            //     message: "what is the new salary ?",
+            //     name: "new_salary",
+    
+            // },
 
-        },
-       
-   
-    ]).then(answers => {
-        db.query(`UPDATE roles
-        SET title = ("${answers.update_role}")`, (err, data) => {
-            if (err) {
-                console.log(err)
-            }
-            console.log("Role has been updated")
-            init();
+            
+        ]).then(answers => {
+            console.log(answers)
+            db.query(`UPDATE roles SET id '${answers.new_role}' WHERE id = '${answers.emp_id}';'`, (err, data) => {
+                if (err) {
+                    console.log(err)
+                }
+                console.log("Employee Role has been updated")
+                init();
+            })
         })
-    })
-
-}
+    
+    }
 
 init();    

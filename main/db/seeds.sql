@@ -6,7 +6,7 @@ VALUES ("supply chain"),
       
       
 
-INSERT INTO roles (id,title,salary,department_id)
+INSERT INTO roles (id,title,salary,department_id,)
 VALUES (1,"supply chain director","75000",1),
        (2,"HR director","84000",2),
        (3,"saftey Manager","82000",3),
