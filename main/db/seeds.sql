@@ -1,21 +1,20 @@
 INSERT INTO department (department_name)
 VALUES ("supply chain"),
        ("HR"),
-       ("saftey"),
+       ("safety"),
        ("accounting");
       
-      
+INSERT INTO roles (title, salary, department_id)
+VALUES ("supply chain director", 75000, 1),
+       ("HR director", 84000, 2),
+       ("safety Manager", 82000, 3),
+       ("accounting Manager", 77000, 4);
 
-INSERT INTO roles (id,title,salary,department_id,)
-VALUES (1,"supply chain director","75000",1),
-       (2,"HR director","84000",2),
-       (3,"saftey Manager","82000",3),
-       (4,"accounting Manager","77000",4);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Adam", "cliff", 1, NULL),
+       ("Micheal", "D", 2, NULL),
+       ("Christina", "bailey", 3, NULL),
+       ("Dalida", "Quinn", 4, NULL);
 
-INSERT INTO employee (id,first_name,last_name,role_id,manager_id)
-VALUES (1,"Adam","cliff",1,2254),
-       (2,"Micheal","D", 2,3377),
-       (3,"Christina","bailey",3,7415),
-       (4,"Dalida","Quinn",4,4765);
        
        

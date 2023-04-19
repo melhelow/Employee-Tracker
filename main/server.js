@@ -212,7 +212,7 @@ function updateEmployeeRole() {
             
         ]).then(answers => {
             console.log(answers)
-            db.query(`UPDATE roles SET id '${answers.new_role}' WHERE id = '${answers.emp_id}';'`, (err, data) => {
+            db.query(`UPDATE employee SET role_id = '${answers.new_role}' WHERE id = '${answers.emp_id}';'`, (err, data) => {
                 if (err) {
                     console.log(err)
                 }
